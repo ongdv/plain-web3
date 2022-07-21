@@ -1,0 +1,22 @@
+{
+    "editor.tabSize": 4,
+    "javascript.preferences.quoteStyle": "single",
+    "explorer.confirmDragAndDrop": false,
+    "editor.acceptSuggestionOnEnter": "smart",
+    "emmet.includeLanguages": {
+      "javascript": "javascriptreact"
+    },
+    "breadcrumbs.enabled": true,
+    "diffEditor.ignoreTrimWhitespace": true,
+    "editor.suggestSelection": "first",
+    "prettier.singleQuote": true,
+    "javascript.suggest.completeJSDocs": true,
+    "prettier.jsxSingleQuote": false,
+    // "editor.formatOnSave": false,
+    "editor.formatOnSave": true,
+    "javascript.updateImportsOnFileMove.enabled": "never",
+    "javascript.format.enable": false,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "editor.fontFamily": "D2Coding",
+    "editor.hideCursorInOverviewRuler": true,
+}
