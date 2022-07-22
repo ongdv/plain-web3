@@ -5,8 +5,10 @@
  * @returns 
  */
 async function getBalance(address=null) {
+    console.log(address);
     try {
         const balance = await web3.eth.getBalance(address);
+        console.log(balance);
         if(balance){
             return balance
         }
@@ -16,11 +18,15 @@ async function getBalance(address=null) {
     }
 }
 
-
+/**
+ * 계좌 생성
+ * --
+ * @returns 
+ */
 function createAccount() {
     try {
-        const account = web3.eth.accounts.create();
-        return account;
+        const result = web3.eth.accounts.create();
+        return result;
     } catch (error) {
         return false;
     }
