@@ -1,3 +1,3 @@
-const web3 = new Web3(`https://ropsten.ihttps://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.jsnfura.io/v3/${RPOSTEN_KEY}`);
+const web3 = new Web3(`https://ropsten.infura.io/v3/035ee5b7beeb4d8f88719d16475a8762`);
 
 console.log(web3)
