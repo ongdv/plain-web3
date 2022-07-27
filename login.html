@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/bower_components/web3.min/index.js"></script>
+    <script src="/bower_components/ethereumjs-tx-1.3.3.min/index.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/prefixfree/prefixfree.min.js"></script>
+    <script src="/bower_components/jquery-loading/dist/jquery.loading.js"></script>
+    <script src="/bower_components/firebase-app/index.js"></script>
+    <script src="/bower_components/firebase-firestore/index.js"></script>
+    <script src="/bower_components/cdn.tailwindcss/index.com"></script>
+    <!-- <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script> -->
+    <script src="https://kit.fontawesome.com/ac060dbe3d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/index.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="h-screen flex justify-center items-center">
+        <div class="w-1/2 h-screen flex justify-center items-center gradient-bg-welcome">
+            <div class="flex flex-1 justify-start flex-col mf:mr-10 p-10">
+                <h1 class="text-3xl sm:text-5xl text-white text-gradient py-1">
+                    Send Crypto <br /> Across the world
+                </h1>
+                <p class="text-left mt-5 text-white font-light md:w-9/12 w-11/12 text-base">
+                    Explore the crypto world. Buy and sell crpytocurrencies easily on
+                    Krypto.
+                </p>
+                <div class="grid sm:grid-cols-3 grid-cols-2 w-11/12 mt-10">
+                    <div
+                        class="rounded-tl-2xl min-h-[70px] sm:px-0 px-2 sm:min-w[120px] flex justify-center items-center border-[0.5px] border-gray-400 text-sm font-light text-white">
+                        Reliability</div>
+                    <div
+                        class="min-h-[70px] sm:px-0 px-2 sm:min-w[120px] flex justify-center items-center border-[0.5px] border-gray-400 text-sm font-light text-white">
+                        Security</div>
+                    <div
+                        class="rounded-tr-2xl min-h-[70px] sm:px-0 px-2 sm:min-w[120px] flex justify-center items-center border-[0.5px] border-gray-400 text-sm font-light text-white">
+                        Ethereum</div>
+                    <div
+                        class="rounded-bl-2xl min-h-[70px] sm:px-0 px-2 sm:min-w[120px] flex justify-center items-center border-[0.5px] border-gray-400 text-sm font-light text-white">
+                        Web 3.0</div>
+                    <div
+                        class="min-h-[70px] sm:px-0 px-2 sm:min-w[120px] flex justify-center items-center border-[0.5px] border-gray-400 text-sm font-light text-white">
+                        Low fees</div>
+                    <div
+                        class="rounded-br-2xl min-h-[70px] sm:px-0 px-2 sm:min-w[120px] flex justify-center items-center border-[0.5px] border-gray-400 text-sm font-light text-white">
+                        Blockchain</div>
+                </div>
+            </div>
+        </div>
+        <div class="w-1/2 h-screen flex flex-col justify-center items-center">
+            <div id="login-form" class="w-3/4 flex justify-center flex-col items-center">
+                <h2 class="m-5 text-3xl font-bold">
+                    Login
+                </h2>
+                <div class="w-3/4 my-3">
+                    <input type="text" id="login_id"
+                        class="w-full outline-none border-t-0 border-l-0 border-r-0 border-b-gray-200 border-b-2 leading-loose"
+                        placeholder="Login ID">
+                </div>
+                <div class="w-3/4 my-3">
+                    <input type="password" id="login_pw"
+                        class="w-full outline-none border-t-0 border-l-0 border-r-0 border-b-gray-200 border-b-2 leading-loose"
+                        placeholder="Login Password">
+                </div>
+                <div class="w-3/4 my-3">
+                    <button class="w-full rounded bg-slate-500 leading-[3] text-white" id="login_btn">Login</button>
+                </div>
+            </div>
+            <div class="w-3/5 relative flex py-5 items-center">
+                <div class="flex-grow border-t flex-1 border-gray-400"></div>
+                <span class="flex-shrink mx-4 text-blue-400 cursor-pointer" id="change-btn">or Signup</span>
+                <div class="flex-grow border-t flex-1 border-gray-400"></div>
+            </div>
+            <div id="signup-form" class="w-3/4 flex justify-center flex-col items-center">
+                <h2 class="m-5 text-3xl font-bold">
+                    Signup
+                </h2>
+                <div class="w-3/4 my-3">
+                    <input type="text"
+                    id="login_id"
+                        class="w-full outline-none border-t-0 border-l-0 border-r-0 border-b-gray-200 border-b-2 leading-loose"
+                        placeholder="Login ID">
+                </div>
+                <div class="w-3/4 my-3">
+                    <input type="password"
+                    id="login_pw"
+                        class="w-full outline-none border-t-0 border-l-0 border-r-0 border-b-gray-200 border-b-2 leading-loose"
+                        placeholder="Login Password">
+                </div>
+                <div class="w-3/4 my-3">
+                    <input type="password"
+                    id="login_id_check"
+                        class="w-full outline-none border-t-0 border-l-0 border-r-0 border-b-gray-200 border-b-2 leading-loose"
+                        placeholder="Login Password Check">
+                </div>
+                <div class="w-3/4 my-3">
+                    <input type="text"
+                    id="user_name"
+                        class="w-full outline-none border-t-0 border-l-0 border-r-0 border-b-gray-200 border-b-2 leading-loose"
+                        placeholder="User Name">
+                </div>
+                <div class="w-3/4 my-3">
+                    <button class="w-full rounded bg-slate-500 leading-[3] text-white" id="signup-btn">Signup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/config//key.js"></script>
+<script src="/js/util.js"></script>
+<script src="/js/init.js"></script>
+<script src="/js/eth.js"></script>
+<script src="/js/login.js"></script>
+
+</html>
